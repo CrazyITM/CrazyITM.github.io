@@ -2,7 +2,7 @@
 layout: post
 category : Animation
 tagline: "Supporting tagline"
-tags : [pushAnimation maskLayer shapelayer]
+tags : [pushAnimation ,maskLayer ,shapelayer]
 ---
 #自定义控制器动画切换效果
 
@@ -17,9 +17,9 @@ tags : [pushAnimation maskLayer shapelayer]
 
 [id]: {{site.url}}/assets/pushAnimation.gif "效果图1"
 
-wow  效果太赞了 👍
+~\(≧▽≦)/~ 效果太赞了 
 
-##基础知识:
+##让我们开始吧:
 **1.shape layer,maskLayer,CA动画的使用**(关于[layer的使用][LayerURL])
 
 [LayerURL]:layer.html
@@ -30,8 +30,6 @@ wow  效果太赞了 👍
 
 如果你上述知识不熟悉可以自行点开链接去补充下.这里不做详细介绍
 
-
-<br/>
 ##大致步骤:
 1. **在NavgationController 的代理方法中捕获到切换上下文 然后读取目的控制器(ToViewController)的view,贴到上下文的视图上面.**
 
@@ -42,6 +40,13 @@ wow  效果太赞了 👍
 4. **通过UIPercentDrivenInteractiveTransition类可以控制切换的进度,结合手势读取进度值,实现最后的自由控制效果.**
 
 
+```
+Fenced code blocks are like Stardard
+Markdown’s regular code blocks, except that
+they’re not indented and instead rely on a
+start and end fence lines to delimit the code
+block.
+```
 <br/>
 原文网址-[-http://www.raywenderlich.com/86521/how-to-make-a-view-controller-transition-animation-like-in-the-ping-app](http://)(本文在此基础修改)
 
