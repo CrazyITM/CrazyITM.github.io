@@ -10,9 +10,9 @@ highlighter: pygments
 #
 title :  小钻风的巡山笔记
 tagline: Site Tagline
-author : jianAjian
-name : Liáng jiàn Hão
-email : 295938867@qq.com
+author : 
+  name : Liáng jiàn Hão
+  email : 295938867@qq.com
   # github : username
   # twitter : username
   # feedburner : feedname
