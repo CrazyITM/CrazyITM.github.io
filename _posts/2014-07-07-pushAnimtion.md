@@ -15,7 +15,7 @@ tags : [pushAnimation maskLayer shapelayer]
 
 ![alt text][id]
 
-[id]: ./pushAnimation.gif "效果图1"
+[id]: {{site.url}}/assets/pushAnimation.gif "效果图1"
 
 wow  效果太赞了 👍
 
