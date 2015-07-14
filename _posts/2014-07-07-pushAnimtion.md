@@ -12,10 +12,10 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 
 
 **实现效果如下**
-
+<br>
 ![alt text][id]
 
-[id]: {{site.url}}/assets/pushAnimation.gif "效果图1"
+[id]:{{site.url}}/assets/pushAnimation/pushAnimation.gif "效果图1"
 
 ~\(≧▽≦)/~ 效果太赞了 
 
