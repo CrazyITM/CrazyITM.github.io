@@ -58,7 +58,6 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 
 <br/>
 
-<fdsa>
 
 ####2.为*NavgationController*添加一个代理
 * 新建一个`NavigationDelegate`类继承自`NSObject` 并接受协议 *`<UINavigationControllerDelegate>`*
