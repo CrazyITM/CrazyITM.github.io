@@ -51,8 +51,10 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 这里FirstViewController `touchBegin` 的时候push 进来一个SecondViewController ,并没有什么不同.
 <br>
 ![alt text][easypushid]
+
+[easypushid]:{{site.url}}/assets/pushAnimation/easyPushAnimation.gif "最基本的push"
 <!--[easypushid]:../assets/pushAnimation/easyPushAnimation.gif "最基本的push"
--->[easypushid]:{{site.url}}/assets/pushAnimation/easyPushAnimation.gif "最基本的push"
+-->
 
 <br/>
 
