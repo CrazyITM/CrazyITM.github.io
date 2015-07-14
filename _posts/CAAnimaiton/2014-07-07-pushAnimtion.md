@@ -1,5 +1,8 @@
 ---
-layout: default_markdown
+layout: post
+category : Animation
+tagline: "Supporting tagline"
+tags : [pushAnimation maskLayer shapelayer]
 ---
 #自定义控制器动画切换效果
 
