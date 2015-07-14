@@ -56,8 +56,7 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 <!--[easypushid]:../assets/pushAnimation/easyPushAnimation.gif "最基本的push"
 -->
 
-<br/>
-
+<br>
 
 ####2.为*NavgationController*添加一个代理
 * 新建一个`NavigationDelegate`类继承自`NSObject` 并接受协议 *`<UINavigationControllerDelegate>`*
