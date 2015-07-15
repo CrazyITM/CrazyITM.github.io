@@ -58,18 +58,23 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 
 <br>
 
+
 ####2.为*NavgationController*添加一个代理
 * 新建一个`NavigationDelegate`类继承自`NSObject` 并接受协议 *`<UINavigationControllerDelegate>`*
 * 实现代理方法:
+<br>
 
 		- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
                                                 fromViewController:(UIViewController *)fromVC
                                                   toViewController:(UIViewController *)toVC  ;
+                            
+                                                  
+     <br>
 * 实现如下:
 
 
-		- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+		-(id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
                                                 fromViewController:(UIViewController *)fromVC
                                                   toViewController:(UIViewController *)toVC {
