@@ -56,9 +56,7 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 <!--[easypushid]:../assets/pushAnimation/easyPushAnimation.gif "最基本的push"
 -->
 
-<br/>
-
-<fdsa>
+<br>
 
 ####2.为*NavgationController*添加一个代理
 * 新建一个`NavigationDelegate`类继承自`NSObject` 并接受协议 *`<UINavigationControllerDelegate>`*
@@ -75,6 +73,9 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 
 	1. 这里只是返回nil,所以不会有任何变化,但运行后会发现无论push还是pop都会调用该代理方法.
 	2. 该代理方法要求我们返回一个id*`<UIViewControllerAnimatedTransitioning>`* 类型的对象.
+
+
+
 
 ####3.创建 *id`<UIViewControllerAnimatedTransitioning>`* 吧
 
