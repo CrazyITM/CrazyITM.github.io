@@ -59,27 +59,30 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 <br>
 
 
+
+
 ####2.为*NavgationController*添加一个代理
 * 新建一个`NavigationDelegate`类继承自`NSObject` 并接受协议 *`<UINavigationControllerDelegate>`*
 * 实现代理方法:
 <br>
 
-		- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+	```
+	-(id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
                                                 fromViewController:(UIViewController *)fromVC
                                                   toViewController:(UIViewController *)toVC  ;
-                            
-                                                  
-     <br>
+```                                          
+
 * 实现如下:
 
-
-		-(id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+	```
+-(id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
                                                 fromViewController:(UIViewController *)fromVC
                                                   toViewController:(UIViewController *)toVC {
 		   return nil;
 		   }
+```
 
 	1. 这里只是返回nil,所以不会有任何变化,但运行后会发现无论push还是pop都会调用该代理方法.
 	2. 该代理方法要求我们返回一个id*`<UIViewControllerAnimatedTransitioning>`* 类型的对象.
@@ -91,7 +94,8 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 
 *	在继续之前让我们看下官方文档吧 
 	
-		⚠️: 请以英文为准,中文为笔者即兴翻译,不做质量保证 
+```
+⚠️: 请以英文为准,中文为笔者即兴翻译,不做质量保证 
 		
 		Adopt the UIViewControllerAnimatedTransitioning protocol in objects that implement 
 		the animations for a custom view controller transition. The methods in this protocol 
@@ -123,7 +127,7 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 		To add user interaction to a view controller transition, you must use an animator object together with an interactive animator object—a custom object that adopts the UIViewControllerInteractiveTransitioning protocol. For more on defining interactive transitions, see UIViewControllerInteractiveTransitioning Protocol Reference.
 		
 		想要使用有交互的动画,您必须使用另一个对象,它必须遵循UIViewControllerInteractiveTransitioning协议.不懂请参考UIViewControllerInteractiveTransitioning协议。
-
+```
 
 
 
