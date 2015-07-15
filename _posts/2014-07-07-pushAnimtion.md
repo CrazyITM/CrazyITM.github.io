@@ -82,11 +82,25 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 	
 		⚠️: 请以英文为准,中文为笔者即兴翻译,不做质量保证 
 		
-		Adopt the UIViewControllerAnimatedTransitioning protocol in objects that implement the animations for a custom view controller transition. The methods in this protocol let you define an animator object, which creates the animations for transitioning a view controller on or off screen in a fixed amount of time. The animations you create using this protocol must not be interactive. To create interactive transitions, you must combine your animator object with another object that controls the timing of your animations. 
+		Adopt the UIViewControllerAnimatedTransitioning protocol in objects that implement 
+		the animations for a custom view controller transition. The methods in this protocol 
+		let you define an animator object, which creates the animations for transitioning a 
+		view controller on or off screen in a fixed amount of time. The animations you
+		 create using 
+		this protocol must not be interactive. To create interactive transitions, you must 
+		combine your animator object with another object that controls the timing of your 
+		animations. 
 		
-		遵循了这个协议的对象晋升为一个动画者,他创造出一个动画,这个动画执行时间固定,作用是 过渡控制器在屏幕上的的切换.你创建的这个动画者是没有交互的,想要创建有交互的 你得结合另一个对象(后面讲到)来控制你的动画的进度.
+		遵循了这个协议的对象晋升为一个动画者,他创造出一个动画,这个动画执行时间固定,作用是 过渡控制器在屏幕上
+		的的切换.你创建的这个动画者是没有交互的,想要创建有交互的 你得结合另一个对象(后面讲到)来控制你的动画
+		的进度.
 		
-		In your animator object, implement the transitionDuration: method to specify the duration of your transition and implement the animateTransition: method to create the animations themselves. Information about the objects involved in the transition is passed to your animateTransition: method in the form of a context object. Use the information provided by that object to move the target view controller’s view on or off screen over the specified duration.
+		In your animator object, implement the transitionDuration: method to specify the 
+		duration of your transition and implement the animateTransition: method to create 
+		the animations themselves. Information about the objects involved in the transition 
+		is passed to your animateTransition: method in the form of a context object. Use the 
+		information provided by that object to move the target view controller’s view on or 
+		off screen over the specified duration.
 		
 		你创建的那个动画者,通过实现transitionDuration:方法来指定过渡期间;  
 		通过实现animateTransition:方法来创建动画。过渡动画所需要的对象通过animateTransition:方法的上下文对象传递给你。使用上下文提供给你的信息对象实现那些切换动画吧(别忘了有固定时间的)。
