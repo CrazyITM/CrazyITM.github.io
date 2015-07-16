@@ -2,7 +2,7 @@
 layout: post
 category : Animation
 tagline: "Supporting tagline"
-tags : [pushAnimation ,maskLayer ,shapelayer]
+tags : [pushAnimation ,maskLayer ,shapelayer,UIViewControllerAnimatedTransitioning,UIPercentDrivenInteractiveTransition]
 ---
 
 
@@ -25,22 +25,11 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 ~\(≧▽≦)/~ 效果太赞了 .
 <br>
 
-##我们开始吧:
+## 我们开始吧:
 
-<!--下面是一些须知:
 
-**1.shape layer,maskLayer,CA动画的使用**(关于[layer的使用][LayerURL])
+### 大致步骤:
 
-[LayerURL]:layer.html
-
-**2. UIViewControllerAnimatedTransitioning协议和类UIPercentDrivenInteractiveTransition的使用**
-
-**3.其他的小技巧(比如使用xib中如何实现圆角button)**
-
-如果你上述知识不熟悉可以自行点开链接去补充下.这里不做详细介绍
-
--->
-###大致步骤:
 
 1. **在NavgationController 的代理方法中捕获到切换上下文 然后读取目的控制器(ToViewController)的view,贴到上下文的视图上面.**
 
