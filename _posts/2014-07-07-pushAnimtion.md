@@ -11,7 +11,7 @@ tags : [pushAnimation ,maskLayer ,shapelayer,UIViewControllerAnimatedTransitioni
 
 之前在微博上看到有人转发的这种效果,一直想学习,偶尔一次在一个帖子上看到实现过程,[原文][raywenderlichURL] 使用swift实现.
 
-[raywenderlichURL]: (http://www.raywenderlich.com/86521/how-to-make-a-view-controller-transition-animation-like-in-the-ping-app "原文"
+[raywenderlichURL]: http://www.raywenderlich.com/86521/how-to-make-a-view-controller-transition-animation-like-in-the-ping-app "原文"
 
 
 **实现效果如下**
@@ -37,9 +37,9 @@ tags : [pushAnimation ,maskLayer ,shapelayer,UIViewControllerAnimatedTransitioni
 
 3. **动画结束后移除mask,并且通知上下文切换结束了.**
 
-4. **通过UIPercentDrivenInteractiveTransition类可以控制切换的进度,结合手势读取进度值,实现最后的自由控制效果.(该步骤实现交互型动画,篇幅原因已分篇[传送门][interactiveURL])**
+4. **通过UIPercentDrivenInteractiveTransition类可以控制切换的进度,结合手势读取进度值,实现最后的自由控制效果.(该步骤实现交互型动画,篇幅原因已分篇 [传送门][interactiveURL])**
 
-[interactiveURL]:{{site.url}}/assets/pushAnimation/pushAnimation_interactive.md "交互型动画"
+[interactiveURL]: http://www.raywenderlich.com/86521/how-to-make-a-view-controller-transition-animation-like-in-the-ping-app "交互型动画"
 ---
 
 ####1.首先实现最基本的push操作
