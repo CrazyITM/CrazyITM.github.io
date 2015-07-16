@@ -37,10 +37,10 @@ tags : [pushAnimation ,maskLayer ,shapelayer,UIViewControllerAnimatedTransitioni
 
 3. **动画结束后移除mask,并且通知上下文切换结束了.**
 
-4. **通过UIPercentDrivenInteractiveTransition类可以控制切换的进度,结合手势读取进度值,实现最后的自由控制效果.(该步骤实现交互型动画,篇幅原因已分篇 [传送门][interactiveURL])**
+4. **通过UIPercentDrivenInteractiveTransition类可以控制切换的进度,结合手势读取进度值,实现最后的自由控制效果.(该步骤实现交互型动画,篇幅原因已分篇** [传送门][interactiveURL]**)**
 
 [interactiveURL]: http://www.raywenderlich.com/86521/how-to-make-a-view-controller-transition-animation-like-in-the-ping-app "交互型动画"
----
+
 
 ####1.首先实现最基本的push操作
 
