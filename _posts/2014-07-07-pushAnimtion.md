@@ -71,22 +71,24 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 * 实现代理方法:
 <br>
 
-	```
+```
 	-(id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
                                                 fromViewController:(UIViewController *)fromVC
                                                   toViewController:(UIViewController *)toVC  ;
+                                                  
 ```                                          
 
 * 实现如下:
 
-	```
+```
 -(id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
                                                 fromViewController:(UIViewController *)fromVC
                                                   toViewController:(UIViewController *)toVC {
 		   return nil;
 		   }
+		   
 ```
 
 	1. 这里只是返回nil,所以不会有任何变化,但运行后会发现无论push还是pop都会调用该代理方法.
@@ -191,7 +193,7 @@ CommonAnimator.h
 
 CommonAnimator.m
 
- ```
+```
 #import "CommonAnimator.h"
 
 static  NSTimeInterval const  duringTime = 0.5;
@@ -213,7 +215,7 @@ static  NSTimeInterval const  duringTime = 0.5;
 //2. 把将要显示的视图添加到containerView上
     [containerView addSubview:toViewController.view];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duringTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duringTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     //3. 动画结束后通知上下文 过渡已经完成
         [transitionContext completeTransition:YES];
     });
@@ -224,7 +226,7 @@ static  NSTimeInterval const  duringTime = 0.5;
 @end
 
 
- ```
+```
 
 
 NavigationDelegate.h
