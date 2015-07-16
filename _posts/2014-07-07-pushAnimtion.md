@@ -22,8 +22,8 @@ tags : [pushAnimation ,maskLayer ,shapelayer]
 -->
 [finishid]:{{site.url}}/assets/pushAnimation/pushAnimation.gif "最终效果图"
 
-~\(≧▽≦)/~ 效果太赞了 
-
+~\(≧▽≦)/~ 效果太赞了 .
+<br>
 
 ##我们开始吧:
 
