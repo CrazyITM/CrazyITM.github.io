@@ -1,8 +1,8 @@
 ---
 layout: post
-category : Animation
+category: Animation
 tagline: "Supporting tagline"
-tags : [UIViewControllerInteractiveTransitioning]
+tags: [UIViewControllerInteractiveTransitioning]
 ---
 
 
@@ -16,7 +16,7 @@ tags : [UIViewControllerInteractiveTransitioning]
 ## 官方提供的协议
 在使用UIViewControllerAnimatedTransitioning协议的时候.官方介绍:如果想要使用拥有用户交互的动画需要创建遵循 UIViewControllerInteractiveTransitioning的对象.
 
-### 主要方法: 
+### 主要方法:
 `startInteractiveTransition:`
 [^1]在这个方法中可以得到上下文context,并且在更新UI后更新上下文:
 - updateInteractiveTransition: 告诉上下文完成进度,
@@ -33,20 +33,20 @@ tags : [UIViewControllerInteractiveTransitioning]
 ## 具体实现
 苹果提供了一些建议:动画者和UIViewControllerAnimatedTransitioning 的实现者可以使用相同的类[^2], 于是我们修改动画执行者的父类
 
-```
-`@interface Cyclo_MaskAnimatior : UIPercentDrivenInteractiveTransition
-```
-`
+\`\`\`
+\`@interface Cyclo\_MaskAnimatior : UIPercentDrivenInteractiveTransition
+\`\`\`
+\`
 并且在navgationController的代理方法中返回Animator
 
-```
-`(id \<UIViewControllerInteractiveTransitioning\>)navigationController:(UINavigationController *)navigationController
+\`\`\`
+\`(id \<UIViewControllerInteractiveTransitioning\>)navigationController:(UINavigationController \*)navigationController
   interactionControllerForAnimationController:(id \<UIViewControllerAnimatedTransitioning\>) animationController
 
- return [self.animator isKindOfClass:[Cyclo_MaskAnimatior class](#)]?self.animator:nil;
+ return [self.animator isKindOfClass:[Cyclo\_MaskAnimatior class](#)]?self.animator:nil;
  }
-```
-`
+\`\`\`
+\`
 现在添加用户交互:以手势为例,将当前显示的View作为手势的控制器,发送消息给动画者,这里发送消息的顺序是 firstViewController - navgationCtontroller - navgationCtontroller.delegate - Animator
 
 手势的部分代码如下:
@@ -62,7 +62,7 @@ tags : [UIViewControllerInteractiveTransitioning]
 	switch (gestureRecognizer.state) {
 	case UIGestureRecognizerStateBegan:
 	{
-	 
+	
 	touchDirection =([gestureRecognizer velocityInView:self.view].x >0);
 	
 	CGPoint translation =[gestureRecognizer  locationInView:self.view];
@@ -107,8 +107,9 @@ tags : [UIViewControllerInteractiveTransitioning]
 	}
 	}
 	}
-	
 
+** 效果**
+![](assets/%7B%7Bsite.url%7D%7D/assets/interactionAnimation/InterActionAnimation.gif "最终效果图")
 
 
 参考: [http://www.captechconsulting.com/blogs/ios-7-tutorial-series-custom-navigation-transitions--more](http://www.captechconsulting.com/blogs/ios-7-tutorial-series-custom-navigation-transitions--more)
