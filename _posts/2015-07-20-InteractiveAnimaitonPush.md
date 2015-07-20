@@ -33,13 +33,83 @@ tags : [UIViewControllerInteractiveTransitioning]
 ## 具体实现
 苹果提供了一些建议:动画者和UIViewControllerAnimatedTransitioning 的实现者可以使用相同的类[^2], 于是我们修改动画执行者的父类
 
+```
+`@interface Cyclo_MaskAnimatior : UIPercentDrivenInteractiveTransition
+```
+`
 并且在navgationController的代理方法中返回Animator
-	(id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
-		  interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController
+
+```
+`(id \<UIViewControllerInteractiveTransitioning\>)navigationController:(UINavigationController *)navigationController
+  interactionControllerForAnimationController:(id \<UIViewControllerAnimatedTransitioning\>) animationController
+
+ return [self.animator isKindOfClass:[Cyclo_MaskAnimatior class](#)]?self.animator:nil;
+ }
+```
+`
+现在添加用户交互:以手势为例,将当前显示的View作为手势的控制器,发送消息给动画者,这里发送消息的顺序是 firstViewController - navgationCtontroller - navgationCtontroller.delegate - Animator
+
+手势的部分代码如下:
+
+
+	-(void)paned:(UIPanGestureRecognizer *)gestureRecognizer
 	{
-	return [self.animator isKindOfClass:[Cyclo_MaskAnimatior class]]?self.animator:nil;
+	
+	NSLog(@"%f",[gestureRecognizer velocityInView:self.navigationController.view].x);
+	
+	AninationNavigationController * animaitonNav =(AninationNavigationController *)self.navigationController;
+	
+	switch (gestureRecognizer.state) {
+	case UIGestureRecognizerStateBegan:
+	{
+	 
+	touchDirection =([gestureRecognizer velocityInView:self.view].x >0);
+	
+	CGPoint translation =[gestureRecognizer  locationInView:self.view];
+	
+	id obj = [NSValue valueWithCGPoint:translation];
+	
+	SecondViewController *secondVC =[[SecondViewController alloc]init];
+	
+	[animaitonNav setAnimationType:TransformType_cyclo Context:obj];
+	
+	[animaitonNav pushViewController:secondVC animated:YES];
+	
+	break;
+	}
+	case UIGestureRecognizerStateChanged:
+	{
+	
+	CGPoint translation =[gestureRecognizer  translationInView:self.navigationController.view];
+	
+	CGFloat completionProgress =(fabs(-translation.x))/CGRectGetWidth(self.navigationController.view.bounds);
+	
+	[animaitonNav updateInteractiveTransition:completionProgress];
+	
+	break;
+	}
+	case UIGestureRecognizerStateEnded:
+	{
+	if(  ([gestureRecognizer velocityInView:self.navigationController.view].x<0) != touchDirection)
+	{
+	[animaitonNav finishInteractiveTransition];
+	}else
+	{
+	[animaitonNav cancelInteractiveTransition];
+	}
+	break;
 	}
 	
+	default:
+	{
+	[animaitonNav cancelInteractiveTransition];
+	break;
+	}
+	}
+	}
+	
+
+
 
 参考: [http://www.captechconsulting.com/blogs/ios-7-tutorial-series-custom-navigation-transitions--more](http://www.captechconsulting.com/blogs/ios-7-tutorial-series-custom-navigation-transitions--more)
 
