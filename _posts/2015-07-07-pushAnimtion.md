@@ -6,8 +6,6 @@ tags :[pushAnimation ,maskLayer ,shapelayer,UIViewControllerAnimatedTransitionin
 ---
 
 
-****
-
 #	自定义控制器动画切换效果
 
 之前在微博上看到有人转发的这种效果,一直想学习,偶尔一次在一个帖子上看到实现过程,[原文][raywenderlichURL] 使用swift实现.
@@ -29,7 +27,7 @@ tags :[pushAnimation ,maskLayer ,shapelayer,UIViewControllerAnimatedTransitionin
 ## 我们开始吧:
 
 
-### 大致步骤:
+###  大致步骤:
 
 
 1. **在NavgationController 的代理方法中捕获到切换上下文 然后读取目的控制器(ToViewController)的view,贴到上下文的视图上面.**
@@ -43,7 +41,7 @@ tags :[pushAnimation ,maskLayer ,shapelayer,UIViewControllerAnimatedTransitionin
 [interactiveURL]: http://www.raywenderlich.com/86521/how-to-make-a-view-controller-transition-animation-like-in-the-ping-app "交互型动画"
 
 
-####1.首先实现最基本的push操作
+####    1.首先实现最基本的push操作
 
 
 这里FirstViewController `touchBegin` 的时候push 进来一个SecondViewController ,并没有什么不同.
@@ -60,7 +58,7 @@ tags :[pushAnimation ,maskLayer ,shapelayer,UIViewControllerAnimatedTransitionin
 
 
 
-####2.为*NavgationController*添加一个代理
+####    2.为*NavgationController*添加一个代理
 * 新建一个`NavigationDelegate`类继承自`NSObject` 并接受协议 *`<UINavigationControllerDelegate>`*
 * 实现代理方法:
 <br>
@@ -91,7 +89,7 @@ tags :[pushAnimation ,maskLayer ,shapelayer,UIViewControllerAnimatedTransitionin
 
 
 
-####3.创建 *id`<UIViewControllerAnimatedTransitioning>`* 吧
+####    3.创建 *id`<UIViewControllerAnimatedTransitioning>`* 吧
 
 *	在继续之前让我们看下官方文档吧 
 	
