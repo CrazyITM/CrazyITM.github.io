@@ -109,7 +109,7 @@ tags: [UIViewControllerInteractiveTransitioning]
 	}
 
 ** 效果**
-![](assets/%7B%7Bsite.url%7D%7D/assets/interactionAnimation/InterActionAnimation.gif "最终效果图")
+![]({{site.url}}/assets/interactionAnimation/InterActionAnimation.gif "最终效果图")
 
 
 参考: [http://www.captechconsulting.com/blogs/ios-7-tutorial-series-custom-navigation-transitions--more](http://www.captechconsulting.com/blogs/ios-7-tutorial-series-custom-navigation-transitions--more)
