@@ -2,7 +2,7 @@
 layout: post
 category : Animation
 tagline: "Supporting tagline"
-tags : [pushAnimation ,maskLayer ,shapelayer,UIViewControllerAnimatedTransitioning,UIPercentDrivenInteractiveTransition]
+tags :[pushAnimation ,maskLayer ,shapelayer,UIViewControllerAnimatedTransitioning,UIPercentDrivenInteractiveTransition]
 ---
 
 
@@ -378,12 +378,19 @@ static  NSString * const  PathKey = @"path";
 //动画结束后调用
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
-    [self.transitionContext completeTransition:YES];
-    
-    UIViewController * toViewController =[self.transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
-    toViewController.view.layer.mask = nil;
+        if (self.transitionContext) {
+        //动画 执行结束后  上下文是否要完成 的决定条件
+        // 上下文是非被取消
+        [self.transitionContext completeTransition:(![self.transitionContext transitionWasCancelled])];
+
+        UIViewController * toViewController =[self.transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+        
+        toViewController.view.layer.mask = nil;
+    }
 }
+
+
+
 
 
 #pragma mark - setter && getter
@@ -611,5 +618,5 @@ typedef NS_ENUM(NSInteger, TransformType)
 
 
 
-原文网址-[http://www.raywenderlich.com/86521/how-to-make-a-view-controller-transition-animation-like-in-the-ping-app](http://www.raywenderlich.com/86521/how-to-make-a-view-controller-transition-animation-like-in-the-ping-app)(本文在此基础修改)
+参考-[http://www.raywenderlich.com/86521/how-to-make-a-view-controller-transition-animation-like-in-the-ping-app](http://www.raywenderlich.com/86521/how-to-make-a-view-controller-transition-animation-like-in-the-ping-app)
 
