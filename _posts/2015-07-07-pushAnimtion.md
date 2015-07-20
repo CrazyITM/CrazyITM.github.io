@@ -1,7 +1,7 @@
 ---
-layout: post
+layout : post
 category : Animation
-tagline: "Supporting tagline"
+tagline : "Supporting tagline"
 tags :[pushAnimation ,maskLayer ,shapelayer,UIViewControllerAnimatedTransitioning,UIPercentDrivenInteractiveTransition]
 ---
 

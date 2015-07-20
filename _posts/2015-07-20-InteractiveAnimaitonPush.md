@@ -7,7 +7,7 @@ tags : [UIViewControllerInteractiveTransitioning]
 
 
 # 为控制器切换提供用户交互
-[上篇](http://www.ll.com)文章我们讨论了如何为控制器切换添加过渡动画,这里我们将继续讨论关于如何为其添加用户交互.
+[上篇](http://crazyitm.github.io/2015/07/07/pushAnimtion/)文章我们讨论了如何为控制器切换添加过渡动画,这里我们将继续讨论关于如何为其添加用户交互.
 1.   讨论官方提供的协议.
 2.   讨论类*UIPercentDrivenInteractiveTransition*.
 3.   具体实现.
