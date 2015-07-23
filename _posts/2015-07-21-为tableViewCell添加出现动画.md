@@ -18,9 +18,12 @@ TableViewCell将要出现的时候会调用
 所以,一般会在cell上添加一个容器视图,对容器视图进行操作.
 
 为了执行过动画的cell 不再执行动画 , 需要记录indexpath 于是新建一个NSmutableSet属性,
+
 `@property (nonatomic,strong) NSMutableSet  * indexSet ;`
 
+
 * 在diplay的代码中作为判断依据 是否执行动画
+
 `-tableView:willDisplayCell:forRowAtIndexPath: 
 ``{// 如果包含indexPath 不再执行`
 	if([self.indexSet containsObject:indexPath])
@@ -29,7 +32,7 @@ TableViewCell将要出现的时候会调用
 	}
 	
 	[self.indexSet addObject:indexPath];
-		//取得容器视图
+	//取得容器视图
 	UIView * view =[cell viewWithTag:1001];
 	//设置转换矩阵
 	[view .layer setTransform:self.transform];
@@ -43,20 +46,7 @@ TableViewCell将要出现的时候会调用
 
 * 其中设置transFrom如下
 
-`-(void)setTransform`
-`{`
-`	`
-`		CGFloat rotationAngleDegrees = -15;`
-`		CGFloat rotationAngleRadians = rotationAngleDegrees * (M_PI/180); //旋转15度`
-`		CGPoint offsetPositioning = CGPointMake(-20, -20);`
-`		`
-`		CATransform3D transform = CATransform3DIdentity;`
-`		transform = CATransform3DRotate(transform, rotationAngleRadians, 0.0, 0.0, 1.0);`
-`		transform = CATransform3DTranslate(transform, offsetPositioning.x, offsetPositioning.y, 0.0);`
-`	_transform = transform;`
-`
-`}`
-`
+
 其中 角度与弧度的转换
 `1度=π/180弧度( ≈0.017453弧度 ) `
 `一个圆是360度，2π弧度`
