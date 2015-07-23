@@ -46,7 +46,21 @@ view.layer.opacity = 1;
 `
 * 其中设置transFrom如下
 
+```
+`-(void)setTransform
+{
 
+CGFloat rotationAngleDegrees = -15;
+CGFloat rotationAngleRadians = rotationAngleDegrees (M_PI/180); //旋转15度
+CGPoint offsetPositioning = CGPointMake(-20, -20);
+
+CATransform3D transform = CATransform3DIdentity;
+transform = CATransform3DRotate(transform, rotationAngleRadians, 0.0, 0.0, 1.0);
+transform = CATransform3DTranslate(transform, offsetPositioning.x, offsetPositioning.y, 0.0);
+_transform = transform;
+}
+```
+`
 其中 角度与弧度的转换
 
 
