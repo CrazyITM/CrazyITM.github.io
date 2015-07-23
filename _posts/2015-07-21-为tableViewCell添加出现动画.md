@@ -24,7 +24,7 @@ TableViewCell将要出现的时候会调用
 
 * 在diplay的代码中作为判断依据 是否执行动画
 
-```
+\`\`\`
 -tableView:willDisplayCell:forRowAtIndexPath:
 {// 如果包含indexPath 不再执行
 if([self.indexSet containsObject:indexPath]())
@@ -33,7 +33,7 @@ return;
 }
 [self.indexSet addObject:indexPath]();
 //取得容器视图
-UIView * view =[cell viewWithTag:1001]();
+UIView \* view =[cell viewWithTag:1001]();
 //设置转换矩阵
 [view .layer setTransform:self.transform]();
 //设置成默认的状态
@@ -43,12 +43,12 @@ view.layer.opacity = 1;
 }];
 }
 
-```
+\`\`\`
 
 * 其中设置transFrom如下
 
 ```
--(void)setTransform
+`-(void)setTransform
 {
 
 CGFloat rotationAngleDegrees = -15;
@@ -60,13 +60,13 @@ transform = CATransform3DRotate(transform, rotationAngleRadians, 0.0, 0.0, 1.0);
 transform = CATransform3DTranslate(transform, offsetPositioning.x, offsetPositioning.y, 0.0);
 _transform = transform;
 }
-```
-
+`
+`
 其中 角度与弧度的转换
 
 
-```
-\1度=π/180弧度( ≈0.017453弧度 ) 
+\`\`\`
+1度=π/180弧度( ≈0.017453弧度 ) 
 一个圆是360度，2π弧度
 例如： 
 90°＝90×π/180 ＝π/2 弧度 
@@ -74,6 +74,6 @@ _transform = transform;
 45°＝45×π/180 ＝π/4 弧度 
 30°＝30×π/180 ＝π/6 弧度 
 120°＝120×π/180 ＝2π/3 弧度
-```
+\`\`\`
 
 [1]:	http://www.raywenderlich.com/49311/advanced-table-view-animations-tutorial-drop-in-cards
