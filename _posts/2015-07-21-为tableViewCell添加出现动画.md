@@ -21,8 +21,8 @@ TableViewCell将要出现的时候会调用
 
 	@property (nonatomic,strong) NSMutableSet  * indexSet ;
 
- 在diplay的代码中作为判断依据 是否执行动画
-
+ * 在diplay的代码中作为判断依据 是否执行动画
+---- 
 
 	-tableView:willDisplayCell:forRowAtIndexPath:
 	{// 如果包含indexPath 不再执行
@@ -43,8 +43,7 @@ TableViewCell将要出现的时候会调用
 	}
 	
 
-
-* 其中设置transFrom如下
+ 其中设置transFrom如下
 
 
 	-(void)setTransform
