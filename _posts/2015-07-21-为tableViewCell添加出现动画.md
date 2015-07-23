@@ -37,7 +37,7 @@ TableViewCell将要出现的时候会调用
 	[view .layer setTransform:self.transform];
 	//设置成默认的状态
 	[UIView animateWithDuration:0.25 animations:^{
-	]()view.layer.transform =CATransform3DIdentity;
+	view.layer.transform =CATransform3DIdentity;
 	view.layer.opacity = 1;
 	}];
 	}
@@ -49,14 +49,12 @@ TableViewCell将要出现的时候会调用
 
 	-(void)setTransform
 	{
-	
 	CGFloat rotationAngleDegrees = -15;
-	CGFloat rotationAngleRadians = rotationAngleDegrees (M\_PI/180); //旋转15度
+	CGFloat rotationAngleRadians = rotationAngleDegrees (M_PI/180); //旋转15度
 	CGPoint offsetPositioning = CGPointMake(-20, -20);
-	
 	CATransform3D transform =CATransform3DIdentity;
-	transform =CATransform3DRotate(transform, rotationAngleRadians, 0.0, 0.0, 1.0);
-	transform =CATransform3DTranslate(transform, offsetPositioning.x, offsetPositioning.y, 0.0);
+	transform =CATransform3DRotate(transform, rotationAngleRadians,0.0, 0.0, 1.0);
+	transform =CATransform3DTranslate(transform,offsetPositioning.x, offsetPositioning.y, 0.0);
 	_transform = transform;
 	}
 	
