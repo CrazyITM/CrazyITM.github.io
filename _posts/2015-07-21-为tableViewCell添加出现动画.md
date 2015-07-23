@@ -19,35 +19,35 @@ TableViewCell将要出现的时候会调用
 
 为了执行过动画的cell 不再执行动画 , 需要记录indexpath 于是新建一个NSmutableSet属性,
 
-`@property (nonatomic,strong) NSMutableSet  * indexSet ;`
+	@property (nonatomic,strong) NSMutableSet  * indexSet ;
 
 
 * 在diplay的代码中作为判断依据 是否执行动画
 
-`-tableView:willDisplayCell:forRowAtIndexPath: 
-``{// 如果包含indexPath 不再执行`
-	if([self.indexSet containsObject:indexPath])
-	{
-	return;
-	}
-	
-	[self.indexSet addObject:indexPath];
-	//取得容器视图
-	UIView * view =[cell viewWithTag:1001];
-	//设置转换矩阵
-	[view .layer setTransform:self.transform];
-	
-	//设置成默认的状态
-	[UIView animateWithDuration:0.25 animations:^{
-	view.layer.transform = CATransform3DIdentity;
-	view.layer.opacity = 1;
-	}];
-	}
+		-tableView:willDisplayCell:forRowAtIndexPath: 
+		{// 如果包含indexPath 不再执行`
+		if([self.indexSet containsObject:indexPath])
+		{
+		return;
+		}
+		[self.indexSet addObject:indexPath];
+		//取得容器视图
+		UIView * view =[cell viewWithTag:1001];
+		//设置转换矩阵
+		[view .layer setTransform:self.transform];
+		
+		//设置成默认的状态
+		[UIView animateWithDuration:0.25 animations:^{
+		view.layer.transform = CATransform3DIdentity;
+		view.layer.opacity = 1;
+		}];
+		}
 
 * 其中设置transFrom如下
 
 
 其中 角度与弧度的转换
+
 `1度=π/180弧度( ≈0.017453弧度 ) `
 `一个圆是360度，2π弧度`
 `例如： `
