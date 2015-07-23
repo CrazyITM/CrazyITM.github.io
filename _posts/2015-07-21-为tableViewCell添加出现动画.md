@@ -25,7 +25,8 @@ TableViewCell将要出现的时候会调用
 * 在diplay的代码中作为判断依据 是否执行动画
 
 ```
-`-tableView:willDisplayCell:forRowAtIndexPath:
+`
+-tableView:willDisplayCell:forRowAtIndexPath:
 {// 如果包含indexPath 不再执行
 if([self.indexSet containsObject:indexPath]())
 {
@@ -42,6 +43,7 @@ UIView * view =[cell viewWithTag:1001]();
 view.layer.opacity = 1;
 }];
 }
+
 ```
 `
 * 其中设置transFrom如下
