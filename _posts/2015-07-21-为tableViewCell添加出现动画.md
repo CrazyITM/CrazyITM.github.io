@@ -41,6 +41,7 @@ TableViewCell将要出现的时候会调用
 	view.layer.opacity = 1;
 	}];
 	}
+	
 
 
 * 其中设置transFrom如下
@@ -58,6 +59,7 @@ TableViewCell将要出现的时候会调用
 	transform =CATransform3DTranslate(transform, offsetPositioning.x, offsetPositioning.y, 0.0);
 	_transform = transform;
 	}
+	
 
 其中 角度与弧度的转换
 
