@@ -10,6 +10,9 @@
 			<string>无法为xcode 添加package manager.md</string>
 		</array>
 		<array>
+			<string>2015-10-16-使用ssh 连接远程服务器.md</string>
+		</array>
+		<array>
 			<string>2015-07-07-pushAnimtion.md</string>
 		</array>
 		<array>
@@ -38,6 +41,9 @@
 		</array>
 		<array>
 			<string>2015-10-08-iOS设计模式谈之'VIPER'.md</string>
+		</array>
+		<array>
+			<string>2015-10-09-无法为xcode 添加package manager.md</string>
 		</array>
 	</array>
 </dict>
