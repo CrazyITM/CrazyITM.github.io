@@ -7,6 +7,9 @@
 	<key>sheetClusters</key>
 	<array>
 		<array>
+			<string>无法为xcode 添加package manager.md</string>
+		</array>
+		<array>
 			<string>2015-07-07-pushAnimtion.md</string>
 		</array>
 		<array>
@@ -29,6 +32,12 @@
 		</array>
 		<array>
 			<string>2015-07-20-InteractiveAnimaitonPush.md</string>
+		</array>
+		<array>
+			<string>2015-09-02-svgkit的使用.md</string>
+		</array>
+		<array>
+			<string>2015-10-08-iOS设计模式谈之'VIPER'.md</string>
 		</array>
 	</array>
 </dict>
